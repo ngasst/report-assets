@@ -1,0 +1,41 @@
+<body>
+    <div id="app">
+        <h1>{{outline.title}} <small>[{{displayWordCount(outline.wordcount)}}]</small></h1>
+        <div id="parts-list">
+            <div v-for="(part, index) in outline.parts" v-bind:class="['part-'+(index+1), 'part']">
+                <h2>
+                    <span>{{part.title}}</span>
+                    <ul>
+                        <li>{{displayWordCount(part.wordcount)}}</li>
+                        <li><span>Shortest Word: </span><span>{{part.shortest}}</span></li>
+                        <li><span>Longest Word:</span><span>{{part.longest}}</span></li>
+                    </ul>
+                </h2>
+                <div id="chapters-list">
+                    <div v-for="chapter in part.chapters" v-bind:class="[chapter.viewpointClass, 'chapter']">
+                        <div class="card-header">
+                            <h3>{{chapter.title}}</h3>
+                            <span class="word-count" v-if="chapter.stats">{{displayWordCount(chapter.stats.wordcount)}}</span>
+                            <span class="viewpoint-name">{{chapter.viewpoint}}</span>
+                        </div>
+                        <div class="chapter-body">
+                            <h4>Summary</h4>
+                            <div class="summary-container" v-html="displaySummary(chapter.summary)"></div>
+                            <h4>Top 5 Repeated Words</h4>
+                            <div class="repeated-words">
+                                <ul v-if="chapter.stats">
+                                    <li v-if="chapter.stats" v-for="wp in getTopFiveOccurences(chapter.stats.occurence)">
+                                        <div class="occurence-container">
+                                            <span class="key">{{wp.key}}</span>
+                                            <span class="value">{{wp.value}}x</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

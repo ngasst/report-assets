@@ -1,0 +1,287 @@
+@import "variables";
+
+#app {
+    #parts-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-content: flex-end;
+        width: 100%;
+        flex: 1 1 auto;
+
+        .part {
+            margin: 5px;
+            border: solid thin #333;
+            padding: 10px;
+
+            h2 {
+                display: flex;
+                justify-content: flex-start;
+                align-content: center;
+                align-items: center;
+                ul {
+                    display: flex;
+                    flex-direction: row;
+
+                    li {
+                        list-style-type: none;
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+
+        #chapters-list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+            align-content: flex-end;
+            width: 100%;
+            flex: 1 1 auto;
+
+            .chapter-container{
+                max-width: 260px;
+            }
+
+            .chapter {
+                @media all and (min-width: 40em) {
+                    width: 50%;
+                }
+
+                @media all and (min-width: 60em) {
+                    width: 33.33%;
+                }
+                margin: 5px;
+                width: 100%;
+                box-shadow: 2px 2px 5px #333;
+
+                .card-header {
+                    background-color: rgba(255, 255, 255, 0.4);
+                    margin: 0;
+                    flex: 1 1 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0.5px;
+                    height: 40px;
+                    box-shadow: 1px 2px 4px rgba(lighten(black, 25%), 0.6);
+
+                    h3 {
+                        margin: 0;
+                        font-size: 1.2em;
+                        font-variant: small-caps;
+                        color: darken(lightslategray, 25%);
+
+                        &:before {
+                            content: 'Chapter '
+                        }
+                    }
+
+                    .viewpoint-name {
+                        color: darken(white, 2%);
+                        text-shadow: 1px 1px 2px rgba(lighten(black, 50%), 0.8);
+                        text-transform: uppercase;
+                    }
+
+                    .word-count {
+
+                    }
+                }
+
+                .chapter-body {
+
+                    .summary-container {
+                        height: 150px;
+                        overflow-y: auto;
+
+                        p {
+                            padding: 8px;
+                        }
+                    }
+
+                    .repeated-words {
+                         ul {
+                             margin: 0;
+                             -webkit-margin-start: 0;
+                             -webkit-margin-after: 0;
+                             -webkit-margin-before: 0;
+                             -webkit-padding-start: 0;
+                             list-style-type: none;
+                             display: flex;
+                             flex-flow: row wrap;
+                             justify-content: flex-start;
+                             align-content: center;
+                             align-items: center;
+                             padding: 0;
+
+                             li {
+                                margin: 5px 10px;
+                                background-color: lighten(steelblue, 95%);
+                                border-radius: 50%;
+                                min-height: 30px;
+                                min-width: 40px;
+                                padding: 4px;
+                                border: lightblue solid medium;
+                                
+                                .occurence-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    align-content: center;
+
+                                    
+                                    .key {
+                                        color: darkred;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+                                        &:after {
+                                            content: ': ';
+                                        }
+                                    }
+
+                                    .value {
+                                        color: lightsalmon;
+                                        font-weight: bold;
+                                        font-family: sans-serif;
+                                    }
+                                }
+                             }
+                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.part-1 {
+    background-color: rgb(240,240,240) ;
+}
+
+.part-2 {
+    background-color: rgb(224,224,224) ;
+
+}
+
+.part-3 {
+    background-color: rgb(208,208,208) ;
+
+}
+
+.part-4 {
+    background-color: rgb(192,192,192) ;
+
+}
+
+.part-5 {
+    background-color: rgb(176,176,176) ;
+
+}
+
+.part-6 {
+    background-color: rgb(160,160,160) ;
+
+}
+
+.part-7 {
+    background-color: rgb(144,144,144) ;
+
+}
+
+.part-8 {
+    background-color: rgb(128,128,128) ;
+
+}
+
+.part-9 {
+    background-color: rgb(112,112,112) ;
+
+}
+
+.part-10 {
+    background-color: rgb(96,96,96) ;
+
+}
+
+.viewpoint-1 {
+    background-color: $viewpoint-1-color;
+}
+
+.viewpoint-2 {
+    background-color: $viewpoint-2-color;
+}
+
+.viewpoint-3 {
+    background-color: $viewpoint-3-color;
+}
+
+.viewpoint-4 {
+    background-color: $viewpoint-4-color;
+}
+
+.viewpoint-5 {
+    background-color: $viewpoint-5-color;
+}
+
+.viewpoint-6 {
+    background-color: $viewpoint-6-color;
+}
+
+.viewpoint-7 {
+    background-color: $viewpoint-7-color;
+}
+
+.viewpoint-8 {
+    background-color: $viewpoint-8-color;
+}
+
+.viewpoint-9 {
+    background-color: $viewpoint-9-color;
+}
+
+.viewpoint-10 {
+    background-color: $viewpoint-10-color;
+}
+
+.viewpoint-11 {
+    background-color: $viewpoint-11-color;
+}
+
+.viewpoint-12 {
+    background-color: $viewpoint-12-color;
+}
+
+.viewpoint-13 {
+    background-color: $viewpoint-13-color;
+}
+
+.viewpoint-14 {
+    background-color: $viewpoint-14-color;
+}
+
+.viewpoint-15 {
+    background-color: $viewpoint-15-color;
+}
+
+.viewpoint-16 {
+    background-color: $viewpoint-16-color;
+}
+
+.viewpoint-17 {
+    background-color: $viewpoint-17-color;
+}
+
+.viewpoint-18 {
+    background-color: $viewpoint-18-color;
+}
+
+.viewpoint-19 {
+    background-color: $viewpoint-19-color;
+}
+
+.viewpoint-20 {
+    background-color: $viewpoint-20-color;
+}

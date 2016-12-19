@@ -1,0 +1,4 @@
+@mixin colorize {
+  $bg: darken($bg,15%); // !global flag required for 3.4 or later, remove if using 3.3 or older
+  background: $bg;
+}
