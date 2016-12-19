@@ -42,7 +42,7 @@ gulp.task("compile:outline", (cb) => {
 
 gulp.task("compile:manuscript", (cb) => {
 	rimraf("./manuscript.md", cb);
-	return gulp.src(['./**/*/*.md', '!./**/*outline.md'])
+	return gulp.src(['./**/*/*.md', '!./**/*outline.md', '!./node_modules/**/*.md'])
 		.pipe($.concat('manuscript.md'))
 		.pipe(gulp.dest('./'));
 });

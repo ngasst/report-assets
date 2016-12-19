@@ -5,6 +5,7 @@ const fs = require('fs-extra');
 const maindir = require('./create-main-dir');
 const partdirs = require('./create-part-dirs');
 const initialchapters = require('./initial-chapters');
+const pkg = require('./write-pkg-json');
 
 let args = process.argv.filter((a, i) => i > 1);
 
@@ -29,7 +30,8 @@ Promise.resolve(maindir(p))
     return ppaths;
 })
 .then((ppaths) => initialchapters(ppaths, numberChapsPerPart))
-.then((finalpaths) => {
+.then(() => pkg(p, title))
+.then(() => {
     console.log(chalk.green(`Finished creating folders, chapter files, and outline file for project ${title}`));
 })
 .catch(err => console.log(err));

@@ -16,13 +16,13 @@ const app = new Vue({
                     return 1;
                 return 0;
             });
-
+            
             return occurences.filter((v, i) => i < 5);
         },
         displaySummary(summary) {
             let regex = /\n|\r/g;
-            summary = summary.match(regex) === null || typeof summary !== 'string' ? summary.concat(`no summary found\r\nplease create one\rthank you\n`) : summary;
-            console.log('summary', summary);
+            (summary === null || typeof summary === 'undefined') ? summary = ''.concat(`\r\n`) : summary = summary;
+            summary = summary.match(regex) === null || typeof summary !== 'string' ? summary.concat(`no summary found\r\nplease create one\rthank you\n`) : summary = summary;
             let paragraphs = summary.split(regex);
             return paragraphs.map(p => `<p>${p}</p>`).join('');
         }
