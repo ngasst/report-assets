@@ -49,11 +49,11 @@ gulp.task("compile:manuscript", (cb) => {
 
 
 gulp.task("to:json", (done) => {
-	return outlineFunctions.toJson('Woman of Coaled Iron', path.resolve('.'), path.resolve('./assets/data'));
+	return outlineFunctions.toJson(path.resolve('.'), path.resolve('./assets/data'));
 });
 
 gulp.task("to:js", (done) => {
-	return outlineFunctions.toJs('Woman of Coaled Iron', path.resolve('.'), path.resolve('./assets/data'));	
+	return outlineFunctions.toJs(path.resolve('.'), path.resolve('./assets/data'));	
 });
 
 /// GENERATE HTML
