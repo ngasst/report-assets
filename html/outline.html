@@ -20,7 +20,7 @@
                         </div>
                         <div class="chapter-body">
                             <h4>Summary</h4>
-                            <div class="summary-container" v-html="displaySummary(chapter.summary)"></div>
+                            <div class="summary-container" v-html="chapter.summary"></div>
                             <h4>Top 5 Repeated Words</h4>
                             <div class="repeated-words">
                                 <ul v-if="chapter.stats">
